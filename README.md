@@ -28,12 +28,3 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 ```
-
-* 首页
-![首页](./doc/image/image1.png)
-
-* 文章列表
-![文章列表](./doc/image/image2.png)
-
-* 文章内容
-![文章内容](./doc/image/image3.png)
