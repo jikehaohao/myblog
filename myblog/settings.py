@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/2.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
-
 import os
 import sys
 import pymysql
@@ -18,8 +17,9 @@ pymysql.install_as_MySQLdb()
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+#reload(sys)
 sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
-
+#sys.setdefaultencoding('utf-8')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -88,7 +88,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'myblog',
         'USER':'root',
-        'PASSWORD': 'WZQwzq+123',
+        'PASSWORD': '123456',
         'HOST': '127.0.0.1',
         'POST': '3306',
     }
@@ -135,12 +135,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 
-
-# 配置用户上传的文件
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # 需要配置TEMPLATES
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-# UserProfile 覆盖了 django 内置的 users 表
 AUTH_USER_MODEL = 'blog.User'
 
