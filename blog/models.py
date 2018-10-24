@@ -2,9 +2,9 @@
 
 from datetime import datetime
 
-from django.db import models
+from django.db import migrations,models
 from django.contrib.auth.models import AbstractUser
-
+from django.conf import settings
 
 # Create your models here.
 
@@ -86,7 +86,7 @@ class Conment(models.Model):
 
 class Message(models.Model):
     """留言"""
-    user = models.ForeignKey(User,on_delete=models.CASCADE,null=True,verbose_name='用户')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE,null=True,verbose_name='用户')
     message = models.TextField(verbose_name='留言')
     add_time = models.DateTimeField(verbose_name='时间',default=datetime.now)
 

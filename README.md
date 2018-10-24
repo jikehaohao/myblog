@@ -21,10 +21,11 @@
 
 ### 安装
 ```
-pip install -r requirements.txt  #安装所有依赖
+pip3 install -r requirements.txt  #安装所有依赖
 setting.py配置自己的数据库
 * 配置畅言：到http://changyan.kuaizhan.com/注册站点,将templates/message.html中js部分换成你在畅言中生成的js。
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
+python3 manage.py makemigrations --empty blog
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py runserver 0.0.0.0:8080 &
 ```

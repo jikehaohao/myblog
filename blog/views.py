@@ -1,6 +1,6 @@
 # _*_ coding:utf-8 _*_
 import json
-
+import pymysql,logging
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import View
@@ -10,6 +10,14 @@ from django.db.models import Q
 # Create your views here.
 
 from .models import Blog, Category, Conment, Tagprofile
+
+##打印日志
+logger=logging.getLogger('myblog.blog.views')
+
+#try:
+#    mysql= pymysql.connect(host='120.79.8.146',user='root',passwd='1234!@#$abc',db='myblog',charset='utf8')
+#except Exception,e:
+#    logger.error(e)
 
 # 通用模块
 tag_list = Tagprofile.objects.all()  # 标签云
